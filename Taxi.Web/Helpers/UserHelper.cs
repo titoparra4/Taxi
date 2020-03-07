@@ -112,6 +112,11 @@ namespace Taxi.Web.Helpers
             return await _userManager.FindByIdAsync(userId.ToString());
         }
 
+        public async Task<SignInResult> ValidatePasswordAsync(UserEntity user, string password)
+        {
+            return await _signInManager.CheckPasswordSignInAsync(user, password, false);
+        }
+
 
     }
 }
