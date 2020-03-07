@@ -34,6 +34,11 @@ namespace Taxi.Web.Helpers
 
         Task<SignInResult> ValidatePasswordAsync(UserEntity user, string password);
 
+        Task<string> GenerateEmailConfirmationTokenAsync(UserEntity user);
+
+        Task<IdentityResult> ConfirmEmailAsync(UserEntity user, string token);
+
+
 
     }
 }
