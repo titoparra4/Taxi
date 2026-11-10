@@ -25,8 +25,8 @@ namespace Taxi.Web.Helpers
                 string password = _configuration["Mail:Password"];
 
                 MimeMessage message = new MimeMessage();
-                message.From.Add(new MailboxAddress(from));
-                message.To.Add(new MailboxAddress(to));
+                message.From.Add(MailboxAddress.Parse(from));
+                message.To.Add(MailboxAddress.Parse(to));
                 message.Subject = subject;
                 BodyBuilder bodyBuilder = new BodyBuilder
                 {
